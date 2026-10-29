@@ -1,57 +1,91 @@
-<svg width="800" height="240" viewBox="0 0 800 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Главная карточка Material You -->
-  <rect width="800" height="240" rx="28" fill="#1D2E24" />
-  
-  <!-- Декоративные пятна -->
-  <path d="M680 40C720 20 780 50 780 100C780 150 740 180 700 160C660 140 640 180 610 170C580 160 570 120 590 90C610 60 640 60 680 40Z" fill="#2E4A39" opacity="0.8" />
-  <path d="M720 180C740 170 760 180 760 200C760 220 740 230 710 220C680 210 670 190 690 180C710 170 700 190 720 180Z" fill="#805600" opacity="0.6" />
-  <path d="M50 160C20 180 -10 150 -10 110C-10 70 30 40 70 50C110 60 130 30 150 50C170 70 160 110 140 130C120 150 80 140 50 160Z" fill="#15231A" opacity="0.9" />
+<svg width="800" height="260" viewBox="0 0 800 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.03); opacity: 1; filter: drop-shadow(0 0 12px #cef79e); }
+      100% { transform: scale(1); opacity: 0.9; }
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+    @keyframes float {
+      0% { transform: translateY(0px) rotate(0deg); opacity: 0.4; }
+      50% { transform: translateY(-10px) rotate(3deg); opacity: 0.8; }
+      100% { transform: translateY(0px) rotate(0deg); opacity: 0.4; }
+    }
+    @keyframes scan {
+      0% { top: 0%; opacity: 0.1; }
+      50% { opacity: 0.3; }
+      100% { top: 100%; opacity: 0; }
+    }
+    .avatar-bg { transform-origin: 104px 115px; animation: pulse 4s ease-in-out infinite; }
+    .accent-glimmer { animation: float 6s ease-in-out infinite; }
+    .text-typing {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid #cef79e;
+      animation: typing 3.5s steps(40, end) infinite alternate, blink .75s step-end infinite;
+    }
+  </style>
 
-  <!-- Аватарка (Закат и дерево) -->
-  <g transform="translate(48, 28)">
-    <path d="M70-10 C85 5 110 5 115 25 C120 45 135 60 130 80 C125 100 125 125 110 135 C95 145 75 155 55 150 C35 145 15 145 0 130 C-15 115 -15 90 -10 70 C-5 50 -15 25 -2 10 C10-5 35-15 50-15 C65-15 55-25 70-10 Z" fill="#FFE2B7" opacity="0.9" />
+  <!-- Главная карточка Material 3 (Abyssal Ink с зелёным подтоном) -->
+  <rect width="800" height="260" rx="28" fill="#15231A" />
+  <rect x="1" y="1" width="798" height="258" rx="27" stroke="#334E3F" stroke-width="1.5" />
+  
+  <!-- Биолюминесцентные анимированные светлячки / частицы -->
+  <circle cx="120" cy="50" r="2.5" fill="#cef79e" class="accent-glimmer" style="animation-delay: 0s;" />
+  <circle cx="340" cy="30" r="1.5" fill="#cef79e" class="accent-glimmer" style="animation-delay: 1.5s;" />
+  <circle cx="720" cy="190" r="2" fill="#cef79e" class="accent-glimmer" style="animation-delay: 3s;" />
+  <circle cx="680" cy="40" r="3" fill="#cef79e" class="accent-glimmer" style="animation-delay: 0.7s;" />
+  <circle cx="50" cy="210" r="1.5" fill="#cef79e" class="accent-glimmer" style="animation-delay: 2.2s;" />
+
+  <!-- Декоративные абстрактные цифровые пятна -->
+  <path d="M680 40C720 20 780 50 780 100C780 150 740 180 700 160C660 140 640 180 610 170C580 160 570 120 590 90C610 60 640 60 680 40Z" fill="#203527" opacity="0.4" />
+  <path d="M720 180C740 170 760 180 760 200C760 220 740 230 710 220C680 210 670 190 690 180C710 170 700 190 720 180Z" fill="#3E543F" opacity="0.3" />
+  <path d="M50 180C25 200 -10 170 -10 130C-10 90 30 60 70 70C110 80 130 50 150 70C170 90 160 130 140 150C120 170 80 160 50 180Z" fill="#1A2D21" opacity="0.6" />
+
+  <!-- Сканирующая сетка/матрица в фоне -->
+  <path d="M210 20 L780 20 M210 40 L780 40 M210 60 L780 60 M210 80 L780 80 M210 100 L780 100 M210 120 L780 120 M210 140 L780 140 M210 160 L780 160 M210 180 L780 180 M210 200 L780 200" stroke="#1D2E24" stroke-width="0.5" stroke-dasharray="2 4" />
+
+  <!-- Анимированный Аватар (Зеленая абстракция + Мишень 🎯) -->
+  <g class="avatar-bg" transform="translate(48, 38)">
+    <!-- Пульсирующее свечение вокруг аватара -->
+    <circle cx="56" cy="65" r="63" fill="#cef79e" opacity="0.15" />
+    
+    <!-- Скругленная рамка в стиле Material You -->
+    <path d="M70-10 C85 5 110 5 115 25 C120 45 135 60 130 80 C125 100 125 125 110 135 C95 145 75 155 55 150 C35 145 15 145 0 130 C-15 115 -15 90 -10 70 C-5 50 -15 25 -2 10 C10-5 35-15 50-15 C65-15 55-25 70-10 Z" fill="#254230" stroke="#cef79e" stroke-width="2.5" />
+    
+    <!-- Контейнер самой аватарки -->
     <clipPath id="avatarClip">
       <circle cx="55" cy="65" r="56" />
     </clipPath>
     <g clip-path="url(#avatarClip)">
-      <rect x="-10" y="0" width="130" height="130" fill="#FF7E47" />
-      <circle cx="55" cy="75" r="45" fill="#FFA347" />
-      <circle cx="35" cy="55" r="28" fill="#FFE2B7" />
-      <path d="M-10 110 Q30 90 70 110 T130 90 L130 130 L-10 130 Z" fill="#2E1C0C" />
-      <path d="M-10 120 Q50 95 130 115 L130 130 L-10 130 Z" fill="#120B04" />
-      <path d="M80 110 L83 75 L87 110 Z M83 77 L78 70 L83 75 Z" stroke="#120B04" stroke-width="4" />
-      <circle cx="75" cy="60" r="16" fill="#1A331E" />
-      <circle cx="92" cy="62" r="12" fill="#2E4A39" />
-      <circle cx="83" cy="50" r="18" fill="#1F3D24" />
+      <rect x="-10" y="0" width="130" height="130" fill="#F4F4F4" />
+      <!-- Наш зеленый геометрический узор -->
+      <path d="M22 30 H48 V60 H82 V30 H108 V85 H82 V145 H48 V85 H22 Z" fill="#6AD49B" />
+    </g>
+
+    <!-- Иконка мишени на срезе аватара -->
+    <g transform="translate(90, 88)">
+      <circle cx="16" cy="16" r="16" fill="#1A2D21" stroke="#cef79e" stroke-width="3" />
+      <!-- Мишень с дротиком -->
+      <circle cx="16" cy="16" r="10" fill="#E06C75" />
+      <circle cx="16" cy="16" r="7" fill="#FFFFFF" />
+      <circle cx="16" cy="16" r="4" fill="#E06C75" />
+      <path d="M21 11 L27 5 M24 8 L22 10 M26 6 L24 4" stroke="#61AFEF" stroke-width="2" stroke-linecap="round" />
     </g>
   </g>
 
-  <!-- Значок хурмы -->
-  <g transform="translate(138, 116)">
-    <circle cx="16" cy="16" r="16" fill="#1F3D24" stroke="#FFE2B7" stroke-width="3" />
-    <circle cx="16" cy="18" r="9" fill="#FF7E00" />
-    <ellipse cx="16" cy="16" rx="8" ry="7" fill="#FF9A00" />
-    <path d="M12 11 Q16 13 16 9 Q16 13 20 11 Q16 15 12 11 Z" fill="#88B04B" />
-    <circle cx="16" cy="12" r="2.5" fill="#4B6F20" />
-  </g>
-
-  <!-- Текст -->
-  <text x="210" y="68" fill="#E1E3DF" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, sans-serif" font-size="18">Привет, я</text>
-  <text x="210" y="118" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, sans-serif" font-size="44" font-weight="600" letter-spacing="-1px">moskvol</text>
-  <text x="210" y="154" fill="#C2C7C0" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, sans-serif" font-size="16">Разработчик desktop-приложений и системных утилит. |</text>
-
-  <!-- Чипы технологий -->
-  <g transform="translate(210, 180)">
-    <rect x="0" y="0" width="50" height="26" rx="13" fill="#15231A" stroke="#414941" stroke-width="1" />
-    <text x="25" y="17" fill="#C2C7C0" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, monospace" font-size="11" font-weight="500" text-anchor="middle">⚡ C#</text>
+  <!-- Приветственный текст -->
+  <text x="210" y="62" fill="#cef79e" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, sans-serif" font-size="16" letter-spacing="1px" font-weight="600">Привет, я</text>
+  <text x="210" y="112" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, sans-serif" font-size="48" font-weight="800" letter-spacing="-1px">moskvol</text>
+  
+  <!-- Анимированная бегущая строка с описанием -->
+  <g transform="translate(210, 126)">
     
-    <rect x="58" y="0" width="60" height="26" rx="13" fill="#15231A" stroke="#414941" stroke-width="1" />
-    <text x="88" y="17" fill="#C2C7C0" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, monospace" font-size="11" font-weight="500" text-anchor="middle">🎨 WPF</text>
-
-    <rect x="126" y="0" width="76" height="26" rx="13" fill="#15231A" stroke="#414941" stroke-width="1" />
-    <text x="164" y="17" fill="#C2C7C0" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, monospace" font-size="11" font-weight="500" text-anchor="middle">🐍 Python</text>
-
-    <rect x="210" y="0" width="98" height="26" rx="13" fill="#15231A" stroke="#414941" stroke-width="1" />
-    <text x="259" y="17" fill="#C2C7C0" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, monospace" font-size="11" font-weight="500" text-anchor="middle">🏔️ Arch Linux</text>
-  </g>
-</svg>
+      
